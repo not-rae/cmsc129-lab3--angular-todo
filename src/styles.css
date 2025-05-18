@@ -1,1 +1,210 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Roboto", "Helvetica Neue", sans-serif;
+  background-color: #f7f9fb;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 550px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Form */
+.add-form {
+  margin-bottom: 30px;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.form-control input[type="text"],
+.form-control input[type="date"],
+.form-control input[type="time"],
+.form-control select {
+  width: 100%;
+  height: 44px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.form-control input[type="text"]:focus,
+.form-control input[type="date"]:focus,
+.form-control input[type="time"]:focus,
+.form-control select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.btn {
+  flex: 1;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-cancel {
+  background: #000;
+}
+
+/* Sort Dropdown */
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.sort-container select {
+  padding: 8px 12px;
+  height: 38px;
+  font-size: 15px;
+}
+
+.sort-dropdown {
+  min-width: 200px;
+}
+
+/* Task Header */
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Snackbar */
+.mat-snack-bar-container {
+  font-size: 15px;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.task.done .task-title,
+.task.done .task-day {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Task Details */
+.task-checkbox {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.task-title-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.task-day {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Priority Tags */
+.priority-tag {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  height: fit-content;
+  color: white;
+}
+
+.priority-high {
+  background-color: #dc3545;
+}
+
+.priority-mid {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.priority-low {
+  background-color: #28a745;
+}

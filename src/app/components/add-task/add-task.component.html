@@ -1,0 +1,53 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="text">Task</label>
+    <input
+      type="text"
+      id="text"
+      name="text"
+      [(ngModel)]="text"
+      placeholder="Add Task"
+    />
+  </div>
+
+  <div class="form-control">
+    <label for="dueDate">Due Date</label>
+    <input
+      type="date"
+      id="dueDate"
+      name="dueDate"
+      [(ngModel)]="dueDate"
+    />
+  </div>
+
+  <div class="form-control">
+    <label for="dueTime">Due Time</label>
+    <input
+      type="time"
+      id="dueTime"
+      name="dueTime"
+      [(ngModel)]="dueTime"
+    />
+  </div>
+
+  <div class="form-control">
+    <label for="priority">Priority</label>
+    <select id="priority" name="priority" [(ngModel)]="priority">
+      <option value="" disabled selected hidden>Select Priority</option>
+      <option value="High">High</option>
+      <option value="Mid">Mid</option>
+      <option value="Low">Low</option>
+    </select>
+  </div>
+
+  <div class="form-buttons">
+    <input
+      type="submit"
+      [value]="task ? 'Save Task' : 'Add Task'"
+      class="btn"
+    />
+    <button type="button" (click)="onCancel()" class="btn btn-cancel">
+      Cancel
+    </button>
+  </div>
+</form>

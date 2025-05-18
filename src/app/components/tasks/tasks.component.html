@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+  <button *ngIf="!showAddTaskForm" (click)="addTask()" class="btn btn-primary">
+    <i class="bi bi-plus-lg me-1"></i> Add New Task
+  </button>
+</div>
+
+<app-add-task
+  *ngIf="showAddTaskForm"
+  [task]="taskToEdit"
+  (onSaveTask)="addOrUpdateTask($event)"
+  (onCancelForm)="onFormClose()"
+></app-add-task>
+
+<div class="d-flex align-items-center gap-2"><br>
+    <label for="sortSelect" class="fw-bold mb-0">Sort By: </label>
+    <select
+      id="sortSelect"
+      [(ngModel)]="sortBy"
+      (change)="sortTasks()"
+      class="form-select w-auto"
+    >
+      <option value="createdAt">Date Added</option>
+      <option value="day">Due Date</option>
+      <option value="priority">Priority</option>
+    </select>
+</div><br>
+
+<div class="task-list d-grid gap-3">
+  <app-task-item
+    *ngFor="let task of tasks"
+    [task]="task"
+    (onDeleteTask)="deleteTask($event)"
+    (onEditTask)="editTask($event)"
+    (onToggleDone)="handleToggleDone($event)"
+  ></app-task-item>
+</div>
+
+

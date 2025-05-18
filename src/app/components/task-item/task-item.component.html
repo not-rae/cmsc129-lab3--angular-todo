@@ -1,0 +1,41 @@
+<div class="task" [class.done]="task.done">
+  <div class="task-header">
+    <input
+      type="checkbox"
+      [checked]="task.done"
+      (change)="toggleDoneFromEvent($event)"
+      class="task-checkbox"
+    />
+
+    <div class="task-title-container">
+      <h3 class="task-title">{{ task.text }}</h3>
+      <p class="task-day">{{ task.day }}</p>
+    </div>  
+
+    <span
+      class="priority-tag"
+      [ngClass]="{
+        'priority-high': task.priority === 'High',
+        'priority-mid': task.priority === 'Mid',
+        'priority-low': task.priority === 'Low'
+      }"
+    >
+      {{ task.priority }}
+    </span>
+
+    <div class="task-actions">
+      <fa-icon
+        (click)="onEdit()"
+        [icon]="faEdit"
+        title="Edit task"
+        style="color: #007bff"
+      ></fa-icon>
+      <fa-icon
+        (click)="onDelete()"
+        [icon]="faTimes"
+        title="Delete task"
+        style="color: #dc3545; margin-left: 12px"
+      ></fa-icon>
+    </div>
+  </div>
+</div>
